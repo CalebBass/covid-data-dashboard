@@ -1,0 +1,86 @@
+
+
+ export interface IUsaCurrentCTP {
+        date: number;
+        states: number;
+        negative: number;
+        pending: number;
+        hospitalizedCurrently: number;
+        hospitalizedCumulative: number;
+        inIcuCurrently: number;
+        inIcuCumulative: number;
+        onVentilatorCumulative: number;
+        onVentilatorCurrently: number;
+        recovered: number;
+        dateChecked: string;
+        death: number;
+        hospitalized: number;
+        totalTestResults: number;
+        lastModified: string;
+        total: number;
+        posNeg: number;
+        deathIncrease: number;
+        hospitalizedIncrease: number;
+        negativeIncrease: number;
+        positiveIncrease: number;
+        totalTestResultsIncrease: number;
+        hash: string;
+    }
+
+    export interface ICurrentState {
+        date: number;
+                state: string;
+                positive: number;
+                probableCases?: any;
+                negative: number;
+                pending?: any;
+                totalTestResultsSource: string;
+                totalTestResults: number;
+                hospitalizedCurrently: number;
+                hospitalizedCumulative?: any;
+                inIcuCurrently: number;
+                inIcuCumulative?: any;
+                onVentilatorCurrently?: any;
+                onVentilatorCumulative?: any;
+                recovered?: any;
+                dataQualityGrade: string;
+                lastUpdateEt: string;
+                dateModified: Date;
+                checkTimeEt: string;
+                death: number;
+                hospitalized?: any;
+                dateChecked: Date;
+                totalTestsViral: number;
+                positiveTestsViral?: any;
+                negativeTestsViral?: any;
+                positiveCasesViral: number;
+                deathConfirmed?: any;
+                deathProbable?: any;
+                totalTestEncountersViral?: any;
+                totalTestsPeopleViral?: any;
+                totalTestsAntibody?: any;
+                positiveTestsAntibody?: any;
+                negativeTestsAntibody?: any;
+                totalTestsPeopleAntibody?: any;
+                positiveTestsPeopleAntibody?: any;
+                negativeTestsPeopleAntibody?: any;
+                totalTestsPeopleAntigen?: any;
+                positiveTestsPeopleAntigen?: any;
+                totalTestsAntigen?: any;
+                positiveTestsAntigen?: any;
+                fips: string;
+                positiveIncrease: number;
+                negativeIncrease: number;
+                total: number;
+                totalTestResultsIncrease: number;
+                posNeg: number;
+                deathIncrease: number;
+                hospitalizedIncrease: number;
+                hash: string;
+                commercialScore: number;
+                negativeRegularScore: number;
+                negativeScore: number;
+                positiveScore: number;
+                score: number;
+                grade: string;
+    }

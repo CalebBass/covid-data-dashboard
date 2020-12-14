@@ -1,22 +1,23 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import Home from './components/Home';
-import 'antd/dist/antd.css';
-import UnitedStatesHome from './components/UnitedStates/UnitedStatesHome';
-import States from './components/UnitedStates/States';
-import Cities from './components/UnitedStates/Cities';
+import React, { useState } from 'react'
 import { Layout, Menu } from "antd";
-import LoginPage from './User/LoginPage';
-
+import { BrowserRouter as Router, Routes, Route, useRoutes, NavLink } from 'react-router-dom';
+import UnitedStatesHome from '../components/UnitedStates/UnitedStatesHome';
+import States from '../components/UnitedStates/States';
+import Cities from '../components/UnitedStates/Cities';
+import Home from '../components/Home';
 const { Header, Content, Footer } = Layout;
 
+const MainLayout = (props: any) => {
 
-function App() {
- 
-  return (
-    <>
-        <Layout>
+  const [token, setToken] = useState<string>('');
+
+  const setTokenOnLogin = (token: string) => {
+
+    setToken(token);
+  }
+    return (
+        <div>
+            <Layout>
           <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
             <div className="logo" />
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
@@ -32,11 +33,13 @@ function App() {
               <Menu.Item key="4">
                 <NavLink to="World">World</NavLink>
               </Menu.Item>
-              <Menu.Item key="5">
+            </Menu>
+            <Menu theme="dark" mode="horizontal" >
+            <Menu.Item key="5">
                 <NavLink to="Register">Register</NavLink>
               </Menu.Item>
             <Menu.Item key="6">
-                <NavLink to="Login">Login</NavLink>
+                <NavLink to="World">Login</NavLink>
               </Menu.Item>
             </Menu>
           </Header>
@@ -53,16 +56,15 @@ function App() {
                 <Route path="UnitedStates" element={<UnitedStatesHome />} />
                   <Route path="UnitedStates/Cities" element={<Cities />} />
                   <Route path="UnitedStates/States" element={<States />} />
-                  <Route path="Login" element={<LoginPage />} />
-
               </Routes>
+              {props.children}
 
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}></Footer>
         </Layout>
-      </>
-  );
+        </div>
+    )
 }
 
-export default App;
+export default MainLayout
